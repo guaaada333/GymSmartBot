@@ -36,7 +36,7 @@ public class GymBot extends TelegramLongPollingBot {// significa que hereda el c
 
     @Override
     public String getBotToken() {
-        return "8402794640:AAFVC0kNprTIpNdk0T_wrjsVHMSqbz3FsL8";
+        return "CLAVE DEL BOT DE TELGRAM ";
     }//CLAVE
 
     @Override
