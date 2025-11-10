@@ -1,0 +1,44 @@
+[
+  {
+    "usuario": "Guada",
+    "profesor": "Marcos",
+    "horario": "Miércoles 14:00 - 16:00"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Marcos",
+    "horario": "Viernes 18:00 - 20:00"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Luna",
+    "horario": "Jueves 17:00 - 19:00"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Tomás",
+    "horario": "Miércoles 9:00 - 11:00"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Luna",
+    "horario": "Martes 10:00 - 12:00"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Mariano",
+    "horario": "Lunes 18:00-21:00 "
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Mariano",
+    "horario": "Miercoles 18:00-21:00",
+    "especialidad": "Crossfit"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Marcos",
+    "horario": "funcional Miércoles 14:00 - 16:00",
+    "especialidad": "Entrenamiento"
+  }
+]
