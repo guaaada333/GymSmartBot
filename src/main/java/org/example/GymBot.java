@@ -12,9 +12,9 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GymBot extends TelegramLongPollingBot {
+public class GymBot extends TelegramLongPollingBot {// significa que hereda el comportamiento de un bot que escucha mensajes de Telegram (librería telegrambots).
 
-    private final List<Profesor> profesores = List.of(
+    private final List<Profesor> profesores = List.of(//LISTA DE PROFESORES CARGADOS
             new Profesor("Marcos", "Entrenamiento funcional",
                     List.of("Lunes 9:00 - 11:00", "Miércoles 14:00 - 16:00", "Viernes 18:00 - 20:00")),
             new Profesor("Luna", "Yoga y estiramiento",
@@ -32,18 +32,18 @@ public class GymBot extends TelegramLongPollingBot {
     @Override
     public String getBotUsername() {
         return "AsistenteEnergyBot";
-    }
+    }//NOMBRE DEL BOT
 
     @Override
     public String getBotToken() {
         return "8402794640:AAFVC0kNprTIpNdk0T_wrjsVHMSqbz3FsL8";
-    }
+    }//CLAVE
 
     @Override
-    public void onUpdateReceived(Update update) {
+    public void onUpdateReceived(Update update) {//METODO PRINCIPAL CADA VEZ QUE ALGUIEN MANDA UN MENSAJE SE EJECUTA
         if (update.hasMessage() && update.getMessage().hasText()) {
-            String chatId = update.getMessage().getChatId().toString();
-            String text = update.getMessage().getText();
+            String chatId = update.getMessage().getChatId().toString();//IDENTIFICA AL USUARIO
+            String text = update.getMessage().getText();//CONTIENE LO QUE MANDA EL USUARIO
 
             switch (text) {
                 case "/start":
@@ -56,19 +56,19 @@ public class GymBot extends TelegramLongPollingBot {
                     sendMsg(chatId, "Comando no reconocido 😅\nUsá /profes o /start para comenzar.");
             }
         }
-        else if (update.hasCallbackQuery()) {
+        else if (update.hasCallbackQuery()) {//SI EL USUARIO APRETA UN BOTON
             String chatId = update.getCallbackQuery().getMessage().getChatId().toString();
             String data = update.getCallbackQuery().getData();
             String usuario = update.getCallbackQuery().getFrom().getFirstName();
 
-            if (data.startsWith("prof_")) {
+            if (data.startsWith("prof_")) {// SI EMPIEZA CON PROF MUESTRA LOS PROFES -MUESTRA LOS HORARIOS
                 // El usuario eligió un profesor → mostrar horarios
                 String nombreProfe = data.replace("prof_", "");
                 Profesor profe = buscarProfesor(nombreProfe);
                 if (profe != null) {
                     mostrarHorarios(chatId, profe);
                 }
-            } else if (data.startsWith("hora_")) {
+            } else if (data.startsWith("hora_")) {// SI EMPIEZA CON HORA MUESTRA LOS HORARIOS DEL PROFE SELECCIONADO
                 // El usuario eligió un horario → guardar reserva
                 String[] partes = data.replace("hora_", "").split("_", 4);
                 String nombreProfe = partes[0];
@@ -86,14 +86,14 @@ public class GymBot extends TelegramLongPollingBot {
         }
     }
 
-    private Profesor buscarProfesor(String nombre) {
+    private Profesor buscarProfesor(String nombre) {//BUSCA UN PROFESOR EN LA LISTA DE PROFESOR SEGUN SU NOMBRE
         for (Profesor p : profesores) {
             if (p.getNombre().equals(nombre)) return p;
         }
         return null;
     }
 
-    private void mostrarProfes(String chatId) {
+    private void mostrarProfes(String chatId) {//CREA UNA LISTA DE BOTONES INLINE CON LOS NOMBRES Y ESPECIALIDADES DE TODOS LOS PROFESORES
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
 
         for (Profesor p : profesores) {//Por cada profesor en la lista, creá un botón con su nombre y especialidad.
@@ -114,7 +114,7 @@ public class GymBot extends TelegramLongPollingBot {
         }
     }
 
-    private void mostrarHorarios(String chatId, Profesor profe) {
+    private void mostrarHorarios(String chatId, Profesor profe) {//Muestra los horarios del profesor seleccionado.
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
 
         for (String h : profe.getHorarios()) {
@@ -126,7 +126,7 @@ public class GymBot extends TelegramLongPollingBot {
 
             buttons.add(List.of(btn));
         }
-
+//  Crea botones con cada horario disponible y agrega al final un botón de “🔙 Volver”.
         // 🔙 Agregar botón de volver
         InlineKeyboardButton volverBtn = new InlineKeyboardButton();
         volverBtn.setText("🔙 Volver a Profesores");
