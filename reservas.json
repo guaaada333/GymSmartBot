@@ -40,5 +40,17 @@
     "profesor": "Marcos",
     "horario": "funcional Miércoles 14:00 - 16:00",
     "especialidad": "Entrenamiento"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Marcos",
+    "horario": "funcional Miércoles 14:00 - 16:00",
+    "especialidad": "Entrenamiento"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Marcos",
+    "horario": "funcional Lunes 9:00 - 11:00",
+    "especialidad": "Entrenamiento"
   }
 ]
