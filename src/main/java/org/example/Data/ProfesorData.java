@@ -1,8 +1,8 @@
-package org.example;
-
+package org.example.Data;
 import org.example.model.Profesor;
 import java.util.List;
 
+//aca es donde se carga la lista de profesores y sus horarios
 public class ProfesorData {
 
     public static final List<Profesor> PROFESORES = List.of(

@@ -1,10 +1,10 @@
 package org.example.model;
-
+//modelo de reserva
 public class Reserva {
-    private String usuario;
-    private String profesor;
-    private String horario;
-    private String especialidad;
+    private String usuario;//el nombre del usuario que realiza la reserva
+    private String profesor;//profe con el que realiza la reserva
+    private String horario;//horario que elige el usuario
+    private String especialidad;//el tipo de clase que eligio el usuario
 
     public Reserva(String usuario, String profesor, String horario, String especialidad) {
         this.usuario = usuario;
@@ -12,7 +12,7 @@ public class Reserva {
         this.horario = horario;
         this.especialidad=especialidad;
     }
-
+//getters
     public String getUsuario() {
         return usuario;
     }

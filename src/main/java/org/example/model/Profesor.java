@@ -1,11 +1,10 @@
 package org.example.model;
-
 import java.util.List;
-
+//modelo de el objeto profesor
 public class Profesor {
     private String nombre;
     private String especialidad;
-    private List<String> horarios; // NUEVO: lista de días y horas
+    private List<String> horarios; // lista de días y horas
 
 
     public Profesor(String nombre, String especialidad, List<String> horarios) {
@@ -14,6 +13,7 @@ public class Profesor {
         this.horarios = horarios;
 
     }
+    //getters and setters
     public String getNombre() {
         return nombre;
     }

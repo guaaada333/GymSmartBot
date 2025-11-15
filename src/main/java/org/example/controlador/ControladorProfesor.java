@@ -1,20 +1,18 @@
 package org.example.controlador;
-import org.example.ProfesorData;
+import org.example.Data.ProfesorData;
 import org.example.model.Profesor;
 import java.util.List;
-import org.example.model.Profesor;
-
 import java.util.ArrayList;
-import java.util.List;
 
+//controlador se encarga de la logica de manejar los profesores
 public class ControladorProfesor {
 
-    // devolver todos los profes
+    // Devuelve todos los profesores cargados en ProfesorData,al utilizar la funcion /profes es utilizado
     public List<Profesor> listarProfesores() {
         return ProfesorData.PROFESORES;
     }
 
-    // buscar por nombre exacto
+    // la clase principal gymBot usa este metodo para buscar por nombre exacto
     public Profesor buscarPorNombre(String nombre) {
         for (Profesor p : ProfesorData.PROFESORES) {
             if (p.getNombre().equalsIgnoreCase(nombre)) {
