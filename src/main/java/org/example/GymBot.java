@@ -71,11 +71,19 @@ public class GymBot extends TelegramLongPollingBot {
 
             // Usuario seleccionó un horario
             if (data.startsWith("hora_")) {
-                String[] partes = data.replace("hora_", "").split("_", 4);
+
+                String dataLimpia = data.replace("hora_", "");
+                String[] partes = dataLimpia.split("_");
 
                 String profe = partes[0];
                 String especialidad = partes[1].replace("_", " ");
-                String horario = (partes[2] + " " + partes[3]).replace("_", " ");
+
+                // reconstruir el horario (todos los elementos restantes)
+                StringBuilder horarioSB = new StringBuilder();
+                for (int i = 2; i < partes.length; i++) {
+                    horarioSB.append(partes[i]).append(" ");
+                }
+                String horario = horarioSB.toString().trim().replace("_", " ");
 
                 JsonManager.guardarReserva(new Reserva(usuario, profe, horario, especialidad));
 
@@ -84,6 +92,7 @@ public class GymBot extends TelegramLongPollingBot {
                         "\nHorario: " + horario);
                 return;
             }
+
 
             // Botón volver
             if (data.equals("volver_profes")) {

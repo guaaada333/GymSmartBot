@@ -52,5 +52,17 @@
     "profesor": "Marcos",
     "horario": "funcional Lunes 9:00 - 11:00",
     "especialidad": "Entrenamiento"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Marcos",
+    "horario": "funcional Viernes 18:00 - 20:00",
+    "especialidad": "Entrenamiento"
+  },
+  {
+    "usuario": "Guada",
+    "profesor": "Sofía",
+    "horario": "Miércoles 17:00 - 19:00",
+    "especialidad": "Pilates"
   }
 ]
