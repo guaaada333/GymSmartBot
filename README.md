@@ -22,3 +22,5 @@ Las reservas se guardan en un archivo **JSON**, que actúa como base de datos lo
 
 ---
 
+
+<img width="1580" height="780" alt="Diagramas de flujo" src="https://github.com/user-attachments/assets/50500e42-032d-4969-8407-ea3e2dae3b8c" />
