@@ -10,7 +10,7 @@ FROM eclipse-temurin:17
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
-ENV BOT_TOKEN=""
-ENV BOT_USERNAME=""
+ENV BOT_TOKEN="8402794640:AAFVC0kNprTIpNdk0T_wrjsVHMSqbz3FsL8"
+ENV BOT_USERNAME="AsistenteEnergyBot"
 
 CMD ["sh", "-c", "java -jar app.jar"]
