@@ -19,14 +19,15 @@ public class GymBot extends TelegramLongPollingBot {//libreria para usar metodos
     private final ControladorProfesor controladorProfesor = new ControladorProfesor();//utiliza el controladorProfesor cada vez q se inicia el bot
 
     @Override
-    public String getBotUsername() {
-        return "AsistenteEnergyBot";//nombre del bot de telegram
+    public String getBotToken() {
+        return System.getenv("BOT_TOKEN");
     }
 
     @Override
-    public String getBotToken() {
-        return "8402794640:AAFVC0kNprTIpNdk0T_wrjsVHMSqbz3FsL8";//clave del bot de telegram
+    public String getBotUsername() {
+        return System.getenv("BOT_USERNAME");
     }
+
 
 //Este método se ejecuta cada vez que alguien escribe algo o toca un botón
     @Override
